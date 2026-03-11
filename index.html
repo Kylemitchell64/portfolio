@@ -85,7 +85,8 @@
     .project-header { padding: 2.5rem 3rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
     .project-title-area h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--bright); letter-spacing: -0.03em; margin-bottom: 0.5rem; }
     .project-title-area p { color: var(--muted); font-size: 0.9rem; max-width: 500px; }
-    .project-badge { font-family: 'DM Mono', monospace; font-size: 0.7rem; padding: 0.4rem 0.9rem; border-radius: 20px; background: rgba(0,212,170,0.1); color: var(--accent); border: 1px solid rgba(0,212,170,0.2); white-space: nowrap; }
+    .project-badge { font-family: 'DM Mono', monospace; font-size: 0.7rem; padding: 0.4rem 0.9rem; border-radius: 20px; background: rgba(0,212,170,0.1); color: var(--accent); border: 1px solid rgba(0,212,170,0.2); white-space: nowrap; flex-shrink: 0; align-self: flex-start; }
+    @media (max-width: 640px) { .project-header { flex-direction: column; } .project-badge { align-self: flex-start; } }
     .project-body { display: grid; grid-template-columns: 1fr 1fr; }
     .project-col { padding: 2rem 3rem; }
     .project-col + .project-col { border-left: 1px solid var(--border); }
@@ -404,7 +405,7 @@
           I'm actively seeking my first engineering role — full-time or contract. I bring production-level cloud and full-stack skills, a relentless work ethic, and the ability to ramp up fast. Let's talk.
         </p>
         <div class="contact-links">
-          <a href="/cdn-cgi/l/email-protection#84cffde8e1c9edf0e7ece1e8e8b0b0b0b0c4e3e9e5ede8aae7ebe9" class="contact-link">
+          <a href="mailto:Kylemitchell4444@gmail.com" class="contact-link">
             <span class="contact-link-icon">✉️</span>
             <div class="contact-link-text">
               <div class="contact-link-label">Email</div>

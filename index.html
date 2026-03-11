@@ -235,6 +235,11 @@
             <div class="timeline-title">Infrastructure as Code</div>
             <div class="timeline-desc">Terraform for Azure Blob Storage static hosting + Azure DNS Zone. AZ-900 in progress.</div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2026</div>
+            <div class="timeline-title">Cloud Cost Optimization</div>
+            <div class="timeline-desc">Migrated live production app from Azure AKS to Vercel + Render. Maintained full functionality at zero hosting cost.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -311,9 +316,9 @@
       <div class="project-header">
         <div class="project-title-area">
           <h3>Production Full-Stack Task Management System</h3>
-          <p>Built end-to-end from scratch: React frontend, .NET Core REST API, PostgreSQL database — containerized with Docker, orchestrated with Kubernetes, and deployed to Azure with a fully automated CI/CD pipeline.</p>
+          <p>Built end-to-end from scratch: React frontend, .NET Core REST API, PostgreSQL database — containerized with Docker, orchestrated with Kubernetes, and deployed via a fully automated CI/CD pipeline. Migrated from Azure AKS to a cost-optimized stack (Vercel + Render) to maintain a live production deployment at zero cost.</p>
         </div>
-        <span class="project-badge">⚡ Live on AKS</span>
+        <span class="project-badge">⚡ Live Demo Available</span>
       </div>
       <div class="project-body">
         <div class="project-col">
@@ -357,6 +362,7 @@
         <div class="project-col">
           <div class="project-col-label">Key Engineering Work</div>
           <ul class="feat-list">
+            <li>Migrated from Azure AKS to Vercel (frontend) + Render (API + PostgreSQL) — zero-cost live deployment</li>
             <li>Designed multi-container microservices architecture with Docker Compose</li>
             <li>6+ Cypress E2E test suites: create, delete, check, uncheck, persistence, error-handling</li>
             <li>Isolated test database environment via custom Cypress plugin — zero test contamination</li>
@@ -370,6 +376,9 @@
         </div>
       </div>
       <div class="project-footer">
+        <a href="https://task-app-frontend-alpha.vercel.app" target="_blank" class="btn btn-primary" style="font-size:0.75rem; padding:0.6rem 1.25rem;">↗ Live Demo</a>
+        <a href="https://github.com/Kylemitchell64/task-app-frontend" target="_blank" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.25rem;">⌥ Frontend Repo</a>
+        <a href="https://github.com/Kylemitchell64/my-task-app" target="_blank" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.25rem;">⌥ Backend Repo</a>
         <span class="tag accent">React 19</span>
         <span class="tag accent">ASP.NET Core</span>
         <span class="tag">PostgreSQL</span>
@@ -380,6 +389,8 @@
         <span class="tag purple">Cypress</span>
         <span class="tag">CI/CD</span>
         <span class="tag">NGINX</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Render</span>
       </div>
     </div>
   </section>
@@ -441,10 +452,17 @@
   </section>
 
   <footer>
-    <p>© 2026 <span>Kyle Mitchell</span>. Hosted on <span>Azure Blob Storage</span>.</p>
+    <p>© 2026 <span>Kyle Mitchell</span>. Hosted on <span>Vercel</span>.</p>
     <p>Infrastructure provisioned with <span>Terraform</span></p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

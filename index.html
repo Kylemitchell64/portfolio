@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/Kyle/Downloads/index_3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyle Mitchell — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link href="./index_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #090c10; --bg2: #0d1117; --surface: #111820; --border: #1e2d3d;
+      --accent: #00d4aa; --accent2: #ff6b35; --accent3: #7c6dfa;
+      --text: #e2e8f0; --muted: #64748b; --bright: #f0faf7;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: rgba(9,12,16,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--accent); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; letter-spacing: 0.05em; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(0,212,170,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,170,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,212,170,0.12) 0%, transparent 70%); top: 50%; left: 55%; transform: translate(-50%,-50%); pointer-events: none; }
+    .hero-content { position: relative; max-width: 900px; }
+    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--accent); }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 8vw, 7rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.04em; color: var(--bright); margin-bottom: 1rem; }
+    h1 span { color: var(--accent); }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 560px; margin: 1.5rem 0 3rem; line-height: 1.75; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; padding: 0.9rem 2rem; border-radius: 4px; text-decoration: none; transition: all 0.2s; cursor: pointer; border: 1px solid transparent; display: inline-block; }
+    .btn-primary { background: var(--accent); color: #090c10; font-weight: 400; }
+    .btn-primary:hover { background: #00f0c0; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-stats { display: flex; gap: 3rem; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent); display: block; }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; }
+
+    section { padding: 6rem 4rem; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::before { content: '//'; color: var(--muted); }
+    h2 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em; color: var(--bright); margin-bottom: 1rem; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 1.25rem; line-height: 1.85; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-text p em { color: var(--accent); font-style: normal; }
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item { position: relative; padding-bottom: 2rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -1.5rem; top: 0.45rem; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(0,212,170,0.15); }
+    .timeline-date { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .timeline-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--bright); margin-bottom: 0.25rem; }
+    .timeline-desc { font-size: 0.85rem; color: var(--muted); }
+
+    .skills-bg { background: var(--bg2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .skill-card-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .skill-card-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--bright); margin-bottom: 1rem; letter-spacing: -0.01em; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-family: 'DM Mono', monospace; font-size: 0.68rem; padding: 0.25rem 0.6rem; border-radius: 3px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.03em; }
+    .tag.accent { border-color: rgba(0,212,170,0.3); color: var(--accent); }
+    .tag.orange { border-color: rgba(255,107,53,0.3); color: var(--accent2); }
+    .tag.purple { border-color: rgba(124,109,250,0.3); color: var(--accent3); }
+
+    .project-hero { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 3rem; }
+    .project-header { padding: 2.5rem 3rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+    .project-title-area h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--bright); letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .project-title-area p { color: var(--muted); font-size: 0.9rem; max-width: 500px; }
+    .project-badge { font-family: 'DM Mono', monospace; font-size: 0.7rem; padding: 0.4rem 0.9rem; border-radius: 20px; background: rgba(0,212,170,0.1); color: var(--accent); border: 1px solid rgba(0,212,170,0.2); white-space: nowrap; }
+    .project-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .project-col { padding: 2rem 3rem; }
+    .project-col + .project-col { border-left: 1px solid var(--border); }
+    .project-col-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+    .stack-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(30,45,61,0.5); font-size: 0.85rem; }
+    .stack-item:last-child { border-bottom: none; }
+    .stack-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .stack-name { color: var(--text); }
+    .stack-role { color: var(--muted); font-size: 0.78rem; margin-left: auto; font-family: 'DM Mono', monospace; }
+    .feat-list { list-style: none; }
+    .feat-list li { padding: 0.5rem 0; font-size: 0.85rem; color: var(--muted); padding-left: 1rem; position: relative; border-bottom: 1px solid rgba(30,45,61,0.5); }
+    .feat-list li:last-child { border-bottom: none; }
+    .feat-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; }
+    .project-footer { padding: 1.5rem 3rem; border-top: 1px solid var(--border); display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .contact-bg { background: var(--bg2); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .contact-link { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+    .contact-link:hover { border-color: var(--accent); }
+    .contact-link-icon { font-size: 1.2rem; }
+    .contact-link-text { flex: 1; }
+    .contact-link-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; }
+    .contact-link-value { font-size: 0.9rem; color: var(--text); }
+    .contact-link-arrow { color: var(--muted); transition: color 0.2s; }
+    .contact-link:hover .contact-link-arrow { color: var(--accent); }
+    .availability-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; }
+    .avail-indicator { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+    .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(0,212,170,0.2); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(0,212,170,0.2); } 50% { box-shadow: 0 0 0 6px rgba(0,212,170,0.05); } }
+    .avail-status { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 0.05em; }
+    .avail-card-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--bright); margin-bottom: 0.5rem; }
+    .avail-card-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+    footer span { color: var(--accent); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-content > * { animation: fadeUp 0.6s ease both; }
+    .hero-eyebrow { animation-delay: 0.1s; } h1 { animation-delay: 0.2s; } .hero-sub { animation-delay: 0.3s; } .hero-cta { animation-delay: 0.4s; } .hero-stats { animation-delay: 0.5s; }
+
+    @media (max-width: 1024px) {
+      nav { padding: 1rem 2rem; }
+      section, .hero { padding: 4rem 2rem; }
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .project-body { grid-template-columns: 1fr; }
+      .project-col + .project-col { border-left: none; border-top: 1px solid var(--border); }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+
+  <nav>
+    <a href="#home" class="nav-logo">KM_</a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#project">project</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Open to opportunities</div>
+      <h1>Kyle<br><span>Mitchell</span></h1>
+      <p class="hero-sub">
+        Full-stack software engineer specializing in cloud-native .NET + React applications, container orchestration with Kubernetes, and production DevOps on Azure.
+      </p>
+      <div class="hero-cta">
+        <a href="#project" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="stat-num">&lt;5mo</span>
+          <span class="stat-label">zero to AKS deployment</span>
+        </div>
+        <div>
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Cypress E2E test suites</span>
+        </div>
+        <div>
+          <span class="stat-num">AKS</span>
+          <span class="stat-label">live on Azure Kubernetes</span>
+        </div>
+        <div>
+          <span class="stat-num">IaC</span>
+          <span class="stat-label">Terraform-provisioned infra</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-label">About</div>
+    <h2>Self-taught.<br>Production-ready.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I started coding on <em>October 7th, 2025</em>. In under five months, I went from writing my first HTML to deploying a production-grade, containerized full-stack application on <strong>Azure Kubernetes Service</strong> — with a full CI/CD pipeline, automated E2E testing, and cloud infrastructure provisioned via Terraform.
+        </p>
+        <p>
+          That progression typically takes 2–3 years. I compressed it through intensive daily practice and an obsessive focus on building things that actually work in production — not just tutorials.
+        </p>
+        <p>
+          I think in systems. I don't just write code — I own the full stack: React component → .NET API → PostgreSQL → Docker → Kubernetes → Azure. I've debugged every layer and understand how it all connects.
+        </p>
+        <p>
+          Currently pursuing the <em>AZ-900 Azure Fundamentals</em> certification while actively provisioning infrastructure with Terraform. Seeking my first engineering role where I can contribute immediately and grow fast.
+        </p>
+      </div>
+      <div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 7, 2025</div>
+            <div class="timeline-title">Started Coding</div>
+            <div class="timeline-desc">First HTML file. Zero prior programming experience.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Nov 2025</div>
+            <div class="timeline-title">Full-Stack Development</div>
+            <div class="timeline-desc">React 19 + Vite frontend, ASP.NET Core 7 Web API, PostgreSQL with Entity Framework Core</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Dec 2025</div>
+            <div class="timeline-title">Containerization &amp; Testing</div>
+            <div class="timeline-desc">Docker multi-container architecture, 6+ Cypress E2E test suites with isolated test database</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Jan–Feb 2026</div>
+            <div class="timeline-title">Cloud &amp; DevOps</div>
+            <div class="timeline-desc">Azure DevOps CI/CD pipelines, AKS deployment, ACR, NGINX Ingress Controller</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Feb 2026</div>
+            <div class="timeline-title">Infrastructure as Code</div>
+            <div class="timeline-desc">Terraform for Azure Blob Storage static hosting + Azure DNS Zone. AZ-900 in progress.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-bg">
+    <div class="section-label">Skills</div>
+    <h2>The full stack,<br>end to end.</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon">⚛️</div>
+        <div class="skill-card-title">Frontend</div>
+        <div class="skill-tags">
+          <span class="tag accent">React 19</span>
+          <span class="tag accent">Vite</span>
+          <span class="tag">JavaScript (ES6+)</span>
+          <span class="tag">HTML5 / CSS3</span>
+          <span class="tag">Responsive Design</span>
+          <span class="tag">SPA Architecture</span>
+          <span class="tag">Component Architecture</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-title">Backend</div>
+        <div class="skill-tags">
+          <span class="tag accent">ASP.NET Core 7</span>
+          <span class="tag accent">C#</span>
+          <span class="tag">RESTful API Design</span>
+          <span class="tag">Entity Framework Core</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Health Check Endpoints</span>
+          <span class="tag">Middleware Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">☁️</div>
+        <div class="skill-card-title">Cloud &amp; DevOps</div>
+        <div class="skill-tags">
+          <span class="tag orange">Microsoft Azure</span>
+          <span class="tag orange">Terraform (IaC)</span>
+          <span class="tag orange">Azure Kubernetes Service</span>
+          <span class="tag orange">Azure DevOps CI/CD</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Docker Compose</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Azure Container Registry</span>
+          <span class="tag">NGINX Ingress</span>
+          <span class="tag">Azure Blob Storage</span>
+          <span class="tag">Azure DNS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🧪</div>
+        <div class="skill-card-title">Testing &amp; Tooling</div>
+        <div class="skill-tags">
+          <span class="tag purple">Cypress E2E</span>
+          <span class="tag purple">Test Isolation Patterns</span>
+          <span class="tag">Git</span>
+          <span class="tag">Azure Repos</span>
+          <span class="tag">kubectl</span>
+          <span class="tag">Azure CLI</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="section-label">Featured Project</div>
+    <h2>Task App</h2>
+    <div class="project-hero">
+      <div class="project-header">
+        <div class="project-title-area">
+          <h3>Production Full-Stack Task Management System</h3>
+          <p>Built end-to-end from scratch: React frontend, .NET Core REST API, PostgreSQL database — containerized with Docker, orchestrated with Kubernetes, and deployed to Azure with a fully automated CI/CD pipeline.</p>
+        </div>
+        <span class="project-badge">⚡ Live on AKS</span>
+      </div>
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-label">Tech Stack</div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#61dafb"></div>
+            <span class="stack-name">React 19 + Vite</span>
+            <span class="stack-role">Frontend</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#512bd4"></div>
+            <span class="stack-name">ASP.NET Core 7</span>
+            <span class="stack-role">REST API</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#336791"></div>
+            <span class="stack-name">PostgreSQL + EF Core</span>
+            <span class="stack-role">Database</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#2496ed"></div>
+            <span class="stack-name">Docker + Compose</span>
+            <span class="stack-role">Containers</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#326ce5"></div>
+            <span class="stack-name">Kubernetes (AKS)</span>
+            <span class="stack-role">Orchestration</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#00d4aa"></div>
+            <span class="stack-name">Azure DevOps</span>
+            <span class="stack-role">CI/CD Pipeline</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#ff6b35"></div>
+            <span class="stack-name">NGINX Ingress Controller</span>
+            <span class="stack-role">Routing</span>
+          </div>
+        </div>
+        <div class="project-col">
+          <div class="project-col-label">Key Engineering Work</div>
+          <ul class="feat-list">
+            <li>Designed multi-container microservices architecture with Docker Compose</li>
+            <li>6+ Cypress E2E test suites: create, delete, check, uncheck, persistence, error-handling</li>
+            <li>Isolated test database environment via custom Cypress plugin — zero test contamination</li>
+            <li>Kubernetes liveness and readiness probes for zero-downtime deployments</li>
+            <li>NGINX Ingress with path-based routing across multiple services</li>
+            <li>Azure Container Registry with managed identity — no hardcoded credentials</li>
+            <li>Full CI/CD: code commit → Docker build → ACR push → AKS deploy</li>
+            <li>Debugged and resolved AKS VM quota limits and subscription namespace issues</li>
+            <li>Provisioned Azure Blob Storage + DNS Zone via Terraform IaC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-footer">
+        <span class="tag accent">React 19</span>
+        <span class="tag accent">ASP.NET Core</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Docker</span>
+        <span class="tag orange">Kubernetes</span>
+        <span class="tag orange">Azure</span>
+        <span class="tag orange">Terraform</span>
+        <span class="tag purple">Cypress</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">NGINX</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-bg">
+    <div class="section-label">Contact</div>
+    <h2>Let's build<br>something.</h2>
+    <div class="contact-grid">
+      <div>
+        <p style="color:var(--muted); margin-bottom:1.5rem; line-height:1.85;">
+          I'm actively seeking my first engineering role — full-time or contract. I bring production-level cloud and full-stack skills, a relentless work ethic, and the ability to ramp up fast. Let's talk.
+        </p>
+        <div class="contact-links">
+          <a href="/cdn-cgi/l/email-protection#84cffde8e1c9edf0e7ece1e8e8b0b0b0b0c4e3e9e5ede8aae7ebe9" class="contact-link">
+            <span class="contact-link-icon">✉️</span>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value"><span class="__cf_email__" data-cfemail="3e7547525b73574a5d565b52520a0a0a0a7e59535f5752105d5153">[email&#160;protected]</span></div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://github.com/Kylemitchell64" target="_blank" class="contact-link">
+            <span class="contact-link-icon">⌥</span>
+            <div class="contact-link-text">
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">github.com/Kylemitchell64</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/kyle-mitchell-b0b451222" target="_blank" class="contact-link">
+            <span class="contact-link-icon">in</span>
+            <div class="contact-link-text">
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/kyle-mitchell-b0b451222</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="availability-card">
+          <div class="avail-indicator">
+            <div class="avail-dot"></div>
+            <span class="avail-status">Actively looking</span>
+          </div>
+          <div class="avail-card-title">Open to Engineering Roles</div>
+          <div class="avail-card-desc">
+            Available for full-time or contract positions. Strong fit for teams working with Azure, .NET, React, or Kubernetes. Remote-first preferred. I hit the ground running.
+          </div>
+          <div style="margin-top:1.5rem;">
+            <span class="tag accent" style="display:inline-block; margin:0.25rem;">Remote-first</span>
+            <span class="tag orange" style="display:inline-block; margin:0.25rem;">Cloud Engineering</span>
+            <span class="tag purple" style="display:inline-block; margin:0.25rem;">Full-Stack</span>
+            <span class="tag" style="display:inline-block; margin:0.25rem;">DevOps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <span>Kyle Mitchell</span>. Hosted on <span>Azure Blob Storage</span>.</p>
+    <p>Infrastructure provisioned with <span>Terraform</span></p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e

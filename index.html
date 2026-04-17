@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kyle Mitchell — Software Engineer</title>
+  <title>Kyle Mitchell | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link href="./index_files/css2" rel="stylesheet">
   <style>
@@ -85,7 +85,8 @@
     .project-header { padding: 2.5rem 3rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
     .project-title-area h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--bright); letter-spacing: -0.03em; margin-bottom: 0.5rem; }
     .project-title-area p { color: var(--muted); font-size: 0.9rem; max-width: 500px; }
-    .project-badge { font-family: 'DM Mono', monospace; font-size: 0.7rem; padding: 0.4rem 0.9rem; border-radius: 20px; background: rgba(0,212,170,0.1); color: var(--accent); border: 1px solid rgba(0,212,170,0.2); white-space: nowrap; }
+    .project-badge { font-family: 'DM Mono', monospace; font-size: 0.7rem; padding: 0.4rem 0.9rem; border-radius: 20px; background: rgba(0,212,170,0.1); color: var(--accent); border: 1px solid rgba(0,212,170,0.2); white-space: nowrap; flex-shrink: 0; align-self: flex-start; }
+    @media (max-width: 640px) { .project-header { flex-direction: column; } .project-badge { align-self: flex-start; } }
     .project-body { display: grid; grid-template-columns: 1fr 1fr; }
     .project-col { padding: 2rem 3rem; }
     .project-col + .project-col { border-left: 1px solid var(--border); }
@@ -163,7 +164,7 @@
       <div class="hero-eyebrow">Open to opportunities</div>
       <h1>Kyle<br><span>Mitchell</span></h1>
       <p class="hero-sub">
-        Full-stack software engineer specializing in cloud-native .NET + React applications, container orchestration with Kubernetes, and production DevOps on Azure.
+        I build full-stack apps with .NET and React, deploy them with Docker and Kubernetes, and manage infrastructure on Azure. Self-taught, AZ-900 certified, and looking for my first engineering role.
       </p>
       <div class="hero-cta">
         <a href="#project" class="btn btn-primary">View My Work</a>
@@ -179,8 +180,8 @@
           <span class="stat-label">Cypress E2E test suites</span>
         </div>
         <div>
-          <span class="stat-num">AKS</span>
-          <span class="stat-label">live on Azure Kubernetes</span>
+          <span class="stat-num">AZ-900</span>
+          <span class="stat-label">Azure Certified</span>
         </div>
         <div>
           <span class="stat-num">IaC</span>
@@ -192,20 +193,20 @@
 
   <section id="about">
     <div class="section-label">About</div>
-    <h2>Self-taught.<br>Production-ready.</h2>
+    <h2>How I<br>got here.</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I started coding on <em>October 7th, 2025</em>. In under five months, I went from writing my first HTML to deploying a production-grade, containerized full-stack application on <strong>Azure Kubernetes Service</strong> — with a full CI/CD pipeline, automated E2E testing, and cloud infrastructure provisioned via Terraform.
+          I started coding on <em>October 7th, 2025</em>. In under five months, I went from writing my first HTML to deploying a containerized full-stack app on <strong>Azure Kubernetes Service</strong> with a CI/CD pipeline, automated E2E testing, and cloud infrastructure provisioned through Terraform.
         </p>
         <p>
-          That progression typically takes 2–3 years. I compressed it through intensive daily practice and an obsessive focus on building things that actually work in production — not just tutorials.
+          Most people take a few years to get here. I got there faster because I was building real things every single day, not following along with tutorials. Everything on this site is something I actually built and shipped.
         </p>
         <p>
-          I think in systems. I don't just write code — I own the full stack: React component → .NET API → PostgreSQL → Docker → Kubernetes → Azure. I've debugged every layer and understand how it all connects.
+          I like understanding the whole picture. I've worked across every layer of the stack: React components, .NET APIs, PostgreSQL, Docker containers, Kubernetes clusters, Azure cloud resources. I've debugged all of it and I know how the pieces connect.
         </p>
         <p>
-          Currently pursuing the <em>AZ-900 Azure Fundamentals</em> certification while actively provisioning infrastructure with Terraform. Seeking my first engineering role where I can contribute immediately and grow fast.
+          I passed the <em>AZ-900 Azure Fundamentals</em> certification in April 2026. Currently seeking my first engineering role where I can contribute from day one and keep growing.
         </p>
       </div>
       <div>
@@ -233,7 +234,17 @@
           <div class="timeline-item">
             <div class="timeline-date">Feb 2026</div>
             <div class="timeline-title">Infrastructure as Code</div>
-            <div class="timeline-desc">Terraform for Azure Blob Storage static hosting + Azure DNS Zone. AZ-900 in progress.</div>
+            <div class="timeline-desc">Terraform for Azure Blob Storage static hosting + Azure DNS Zone.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2026</div>
+            <div class="timeline-title">Cloud Cost Optimization</div>
+            <div class="timeline-desc">Migrated live production app from Azure AKS to Vercel + Render. Maintained full functionality at zero hosting cost.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2026</div>
+            <div class="timeline-title">AZ-900 Certified</div>
+            <div class="timeline-desc">Passed Microsoft Azure Fundamentals exam. Studied with hands-on Terraform, AKS, and Entra ID experience.</div>
           </div>
         </div>
       </div>
@@ -275,6 +286,7 @@
         <div class="skill-card-title">Cloud &amp; DevOps</div>
         <div class="skill-tags">
           <span class="tag orange">Microsoft Azure</span>
+          <span class="tag orange">AZ-900 Certified</span>
           <span class="tag orange">Terraform (IaC)</span>
           <span class="tag orange">Azure Kubernetes Service</span>
           <span class="tag orange">Azure DevOps CI/CD</span>
@@ -311,9 +323,9 @@
       <div class="project-header">
         <div class="project-title-area">
           <h3>Production Full-Stack Task Management System</h3>
-          <p>Built end-to-end from scratch: React frontend, .NET Core REST API, PostgreSQL database — containerized with Docker, orchestrated with Kubernetes, and deployed to Azure with a fully automated CI/CD pipeline.</p>
+          <p>Built from scratch: React frontend, .NET Core REST API, PostgreSQL database. Containerized with Docker, orchestrated with Kubernetes, deployed through a fully automated CI/CD pipeline. Later migrated from Azure AKS to Vercel + Render to keep a live production deployment running at zero cost.</p>
         </div>
-        <span class="project-badge">⚡ Live on AKS</span>
+        <a href="https://task-app-frontend-alpha.vercel.app" target="_blank" class="project-badge" style="text-decoration:none;">⚡ Live Demo Available</a>
       </div>
       <div class="project-body">
         <div class="project-col">
@@ -357,12 +369,13 @@
         <div class="project-col">
           <div class="project-col-label">Key Engineering Work</div>
           <ul class="feat-list">
+            <li>Migrated from Azure AKS to Vercel (frontend) + Render (API + PostgreSQL) for a zero-cost live deployment</li>
             <li>Designed multi-container microservices architecture with Docker Compose</li>
             <li>6+ Cypress E2E test suites: create, delete, check, uncheck, persistence, error-handling</li>
-            <li>Isolated test database environment via custom Cypress plugin — zero test contamination</li>
+            <li>Isolated test database environment using a custom Cypress plugin, zero test contamination</li>
             <li>Kubernetes liveness and readiness probes for zero-downtime deployments</li>
             <li>NGINX Ingress with path-based routing across multiple services</li>
-            <li>Azure Container Registry with managed identity — no hardcoded credentials</li>
+            <li>Azure Container Registry with managed identity, no hardcoded credentials</li>
             <li>Full CI/CD: code commit → Docker build → ACR push → AKS deploy</li>
             <li>Debugged and resolved AKS VM quota limits and subscription namespace issues</li>
             <li>Provisioned Azure Blob Storage + DNS Zone via Terraform IaC</li>
@@ -370,6 +383,9 @@
         </div>
       </div>
       <div class="project-footer">
+        <a href="https://task-app-frontend-alpha.vercel.app" target="_blank" class="btn btn-primary" style="font-size:0.75rem; padding:0.6rem 1.25rem;">↗ Live Demo</a>
+        <a href="https://github.com/Kylemitchell64/task-app-frontend" target="_blank" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.25rem;">⌥ Frontend Repo</a>
+        <a href="https://github.com/Kylemitchell64/my-task-app" target="_blank" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.25rem;">⌥ Backend Repo</a>
         <span class="tag accent">React 19</span>
         <span class="tag accent">ASP.NET Core</span>
         <span class="tag">PostgreSQL</span>
@@ -380,6 +396,8 @@
         <span class="tag purple">Cypress</span>
         <span class="tag">CI/CD</span>
         <span class="tag">NGINX</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Render</span>
       </div>
     </div>
   </section>
@@ -390,14 +408,14 @@
     <div class="contact-grid">
       <div>
         <p style="color:var(--muted); margin-bottom:1.5rem; line-height:1.85;">
-          I'm actively seeking my first engineering role — full-time or contract. I bring production-level cloud and full-stack skills, a relentless work ethic, and the ability to ramp up fast. Let's talk.
+          I'm looking for my first engineering role, full-time or contract. I learn fast and I've got the projects to back it up. Let's talk.
         </p>
         <div class="contact-links">
-          <a href="/cdn-cgi/l/email-protection#84cffde8e1c9edf0e7ece1e8e8b0b0b0b0c4e3e9e5ede8aae7ebe9" class="contact-link">
+          <a href="https://mail.google.com/mail/?view=cm&to=Kylemitchell4444@gmail.com" target="_blank" class="contact-link">
             <span class="contact-link-icon">✉️</span>
             <div class="contact-link-text">
               <div class="contact-link-label">Email</div>
-              <div class="contact-link-value"><span class="__cf_email__" data-cfemail="3e7547525b73574a5d565b52520a0a0a0a7e59535f5752105d5153">[email&#160;protected]</span></div>
+              <div class="contact-link-value">Kylemitchell4444@gmail.com</div>
             </div>
             <span class="contact-link-arrow">→</span>
           </a>
@@ -427,7 +445,7 @@
           </div>
           <div class="avail-card-title">Open to Engineering Roles</div>
           <div class="avail-card-desc">
-            Available for full-time or contract positions. Strong fit for teams working with Azure, .NET, React, or Kubernetes. Remote-first preferred. I hit the ground running.
+            Available for full-time or contract positions. Comfortable with Azure, .NET, React, and Kubernetes. Remote preferred, but open to anything that's the right fit.
           </div>
           <div style="margin-top:1.5rem;">
             <span class="tag accent" style="display:inline-block; margin:0.25rem;">Remote-first</span>
@@ -441,10 +459,17 @@
   </section>
 
   <footer>
-    <p>© 2026 <span>Kyle Mitchell</span>. Hosted on <span>Azure Blob Storage</span>.</p>
+    <p>© 2026 <span>Kyle Mitchell</span>. Hosted on <span>Vercel</span>.</p>
     <p>Infrastructure provisioned with <span>Terraform</span></p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

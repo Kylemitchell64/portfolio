@@ -337,7 +337,7 @@
           </div>
           <div class="stack-item">
             <div class="stack-dot" style="background:#512bd4"></div>
-            <span class="stack-name">ASP.NET Core 7</span>
+            <span class="stack-name">ASP.NET Core 8</span>
             <span class="stack-role">REST API</span>
           </div>
           <div class="stack-item">
@@ -369,6 +369,8 @@
         <div class="project-col">
           <div class="project-col-label">Key Engineering Work</div>
           <ul class="feat-list">
+            <li>Noticed unusual activity on the live deployment — XSS attempts and request flooding. Hardened the API with input validation, a 30 req/min rate limiter, and a 100 KB request body cap</li>
+            <li>Added authentication using ASP.NET Core Identity with JWT bearer tokens and Google &amp; GitHub OAuth. Every task is scoped to the authenticated user with server-side ownership enforcement</li>
             <li>Migrated from Azure AKS to Vercel (frontend) + Render (API + PostgreSQL) for a zero-cost live deployment</li>
             <li>Designed multi-container microservices architecture with Docker Compose</li>
             <li>6+ Cypress E2E test suites: create, delete, check, uncheck, persistence, error-handling</li>
@@ -394,6 +396,9 @@
         <span class="tag orange">Azure</span>
         <span class="tag orange">Terraform</span>
         <span class="tag purple">Cypress</span>
+        <span class="tag purple">JWT</span>
+        <span class="tag purple">ASP.NET Identity</span>
+        <span class="tag purple">OAuth</span>
         <span class="tag">CI/CD</span>
         <span class="tag">NGINX</span>
         <span class="tag">Vercel</span>

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kyle Mitchell | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <!-- Wake the game's free-tier API while the visitor reads this page, so "Play Now" opens
+       a warm server instead of a 30-60s cold start. One tiny opaque request, ignored if it fails. -->
+  <script>try{fetch("https://turing-the-other-cheek.onrender.com/api/health",{mode:"no-cors",cache:"no-store"}).catch(function(){});}catch(e){}</script>
   <link href="./index_files/css2" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

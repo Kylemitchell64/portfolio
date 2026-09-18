@@ -412,6 +412,88 @@
     </div>
   </section>
 
+  <section id="project-turing">
+    <div class="section-label">Featured Project</div>
+    <h2>Turing the Other Cheek</h2>
+    <div class="project-hero">
+      <div class="project-header">
+        <div class="project-title-area">
+          <h3>Real-Time Social Deduction Game With an AI Impostor</h3>
+          <p>A phone-first party game: 3&ndash;8 people join a lobby and one player is secretly an AI under a fake human name. Everyone answers the same casual prompts, then tries to catch the impostor. The AI studies each player's real writing over time and blends into the statistical middle of the room, so the more you play, the harder it gets to catch. Includes a reverse mode where the AI guesses who wrote what.</p>
+        </div>
+        <a href="https://turing-the-other-cheek.vercel.app" target="_blank" class="project-badge" style="text-decoration:none;">&#9889; Play It Live</a>
+      </div>
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-label">Tech Stack</div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#61dafb"></div>
+            <span class="stack-name">React 19 + Vite</span>
+            <span class="stack-role">Phone-first client</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#512bd4"></div>
+            <span class="stack-name">ASP.NET Core 8 + SignalR</span>
+            <span class="stack-role">Real-time game server</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#336791"></div>
+            <span class="stack-name">PostgreSQL (Supabase)</span>
+            <span class="stack-role">Profiles, stats, samples</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#4285f4"></div>
+            <span class="stack-name">Gemini / Groq / Cerebras</span>
+            <span class="stack-role">AI failover chain</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#2496ed"></div>
+            <span class="stack-name">Docker + GitHub Actions</span>
+            <span class="stack-role">CI, E2E, load test</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-dot" style="background:#00d4aa"></div>
+            <span class="stack-name">Vercel + Render</span>
+            <span class="stack-role">Zero-cost hosting</span>
+          </div>
+        </div>
+        <div class="project-col">
+          <div class="project-col-label">Key Engineering Work</div>
+          <ul class="feat-list">
+            <li>Server-authoritative state machine over a single SignalR hub: lobbies live in memory behind per-lobby locks, a hosted service ticks every timer, client clocks are never trusted</li>
+            <li>Style profiles: after each game a player's answers feed a background summarizer, and those summaries are injected into the AI's prompt at the next lobby start</li>
+            <li>Post-processing pipeline that matches the AI's answers to the room's average length, punctuation and typo habits, and strips anything that reads as AI</li>
+            <li>Game-theory veto rule: accusations don't reveal a result until a 10s veto window passes, and a veto hides the result forever, so vetoing can't leak the AI's identity</li>
+            <li>Audited anonymity model with a written threat model: no user IDs in rosters, revealed answers keyed by display name and shuffled, timing jitter on AI replies</li>
+            <li>AI provider failover (Gemini &rarr; Groq &rarr; Cerebras) with per-provider quota tracking and a circuit breaker, all on free tiers</li>
+            <li>Free-tier resilience: boots onto an in-memory store if Postgres is paused and restarts itself onto Postgres between games once it's back</li>
+            <li>229 backend tests on EF InMemory, Playwright end-to-end games on desktop and mobile viewports, and a k6 load test, all in CI on every push</li>
+            <li>Admin console with analytics, maintenance mode, free-tier usage tracking and user management behind Google-verified admin claims</li>
+            <li>Procedural chiptune soundtrack built on the Web Audio API with host-synced moods</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://turing-the-other-cheek.vercel.app" target="_blank" class="btn btn-primary" style="font-size:0.75rem; padding:0.6rem 1.25rem;">&#8599; Play Now</a>
+        <a href="https://github.com/Kylemitchell64/turing-the-other-cheek" target="_blank" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.25rem;">&#8997; GitHub Repo</a>
+        <span class="tag accent">React 19</span>
+        <span class="tag accent">ASP.NET Core</span>
+        <span class="tag accent">SignalR</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Docker</span>
+        <span class="tag orange">Gemini</span>
+        <span class="tag orange">LLM Failover</span>
+        <span class="tag purple">Playwright</span>
+        <span class="tag purple">k6</span>
+        <span class="tag purple">JWT</span>
+        <span class="tag purple">OAuth</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Render</span>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact-bg">
     <div class="section-label">Contact</div>
     <h2>Let's build<br>something.</h2>
